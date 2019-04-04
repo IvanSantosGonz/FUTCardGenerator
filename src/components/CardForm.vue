@@ -9,7 +9,7 @@
 
         <v-text-field
           v-model="name"
-          :counter="10"
+          :counter="11"
           :rules="nameRules"
           label="Nombre"
           required
@@ -111,9 +111,7 @@
         >
           Validate
         </v-btn>
-<!--
         <p>{{name}}, {{average}},{{speed}},{{shot}}, {{pass}}, {{dribbling}},{{defense}}, {{physic}} {{position}}</p>
--->
       </v-flex>
     </v-layout>
 
@@ -127,7 +125,7 @@
       name: '',
       nameRules: [
         v => !!v || 'Name is required',
-        v => (v && v.length <= 10) || 'Name must be less than 10 characters'
+        v => (v && v.length <= 11) || 'Name must be less than 10 characters'
       ],
       average: '',
       speed: '',
@@ -157,7 +155,9 @@
     }),
     methods: {
       validate() {
-        this.snackbar = true
+        this.$root.$emit('create', this.name, this.average, this.position, this.speed, this.shot, this.pass, this.dribbling, this.defense, this.physic);
+
+
       },
     }
   }

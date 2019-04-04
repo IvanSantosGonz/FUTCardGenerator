@@ -4,9 +4,9 @@
       <v-container grid-list-md text-xs-center>
         <v-layout row wrap>
           <v-flex xs3 offset-xs1>
-            <fut-card></fut-card>
+            <fut-card v-on:position="handleClickInParent($event)"></fut-card>
           </v-flex>
-            <card-form></card-form>
+          <card-form></card-form>
         </v-layout>
       </v-container>
     </v-app>
