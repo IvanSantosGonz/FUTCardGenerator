@@ -95,8 +95,8 @@
       <hr>
     </div>
     <div><img id="playerPhoto" :src="photo" alt="Player Country"></div>
-    <div><img id="country" :src="country" alt="Player Photo"><hr id = "hrCountry"></div>
-    <div><img id="club" :src="club" alt="Player Photo"></div>
+    <div><img id="country" :src="image" alt="Country"><hr id = "hrCountry"></div>
+    <div><img id="club" :src="club" alt="Club"></div>
     <div id="name" > {{name}} <hr id = "hrName"> </div>
     <div id="props">
       <div style="left: 10px"> {{speed}} </div>
@@ -121,81 +121,38 @@
   export default {
     name: 'Card',
     props: {
-      background: {
-        type: String,
-        default: 'https://cdn.futbin.com/content/fifa19/img/cards/goldrnif.png?v=17',
-        required: false
-      },
-      photo: {
-        type: String,
-        default: 'https://www.futbin.com/design/img/blank_player.png',
-        required: false
-      },
-      name: {
-        type: String,
-        default: 'Ronaldo',
-        required: false
-      },
-      average: {
-        type: Number,
-        default: 50,
-        required: false
-      },
-      position: {
-        type: String,
-        default: 'DC',
-        required: false
-      },
-      country: {
-        type: String,
-        default: 'https://cdn.futbin.com/content/fifa19/img/nation/38.png',
-        required: false
-      },
-      club: {
-        type: String,
-        default: 'https://cdn.futbin.com/content/fifa19/img/clubs/45.png',
-        required: false
-      },
-      speed: {
-        type: Number,
-        default: 50,
-        required: false
-      },
-      shot: {
-        type: Number,
-        default: 50,
-        required: false
-      },
-      pass: {
-        type: Number,
-        default: 88,
-        required: false
-      },
-      dribbling: {
-        type: Number,
-        default: 50,
-        required: false
-      },
-      defense: {
-        type: Number,
-        default: 50,
-        required: false
-      },
-      physic: {
-        type: Number,
-        default: 50,
-        required: false
-      }
+
     },
     data: function () {
       return {
+        image: require('../assets/logo.png'),
+        background: require('../assets/goldCard.png'),
         cardStyle: {
-          backgroundImage: 'url("' + this.background + '")',
+          backgroundImage: this.background,
           backgroundHeight: '300px',
           backgroundWidth: '100px',
           backgroundPosition: 'center top',
           minHeight: '300px'
-        }
+        },
+        photo: 'https://www.futbin.com/design/img/blank_player.png',
+        name: 'Ronaldo',
+        average: 50,
+        position:'DC',
+        country: 'https://cdn.futbin.com/content/fifa19/img/nation/38.png',
+        club: 'https://cdn.futbin.com/content/fifa19/img/clubs/45.png',
+        speed: 50,
+        shot: 50,
+        pass: 88,
+        dribbling: 50,
+        defense: 50,
+        physic:  50,
+
+
+      }
+      },
+    computed: {
+      background (){
+        return require('../assets/logo.png')
       }
     }
   }
