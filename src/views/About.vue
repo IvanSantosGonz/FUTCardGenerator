@@ -1,20 +1,30 @@
 <template>
   <div class="about">
-    <h1>Fifa Ultimate Team Card Generator</h1>
-    <v-app id="inspire">
+    <v-app>
       <v-container grid-list-md text-xs-center>
         <v-layout row wrap>
-          <v-flex xs6 offset-xs3>
-            <Card></Card>
+          <v-flex xs3 offset-xs1>
+            <fut-card></fut-card>
           </v-flex>
+            <card-form></card-form>
         </v-layout>
       </v-container>
     </v-app>
   </div>
 </template>
+
+
 <script>
-  import Card from '../components/Card'
+  import Card from '@/components/Card.vue'
+  import CardForm from '@/components/CardForm.vue'
+
   export default {
-    components: { Card }
+    name: 'about',
+    components: {
+      'fut-card': Card,
+      'card-form': CardForm
+    }
   }
 </script>
+
+}

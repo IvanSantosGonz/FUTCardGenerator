@@ -1,8 +1,14 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <v-toolbar>
+        <v-toolbar-title>Fifa Ultimate Team Card Generator</v-toolbar-title>
+        <v-spacer></v-spacer>
+        <v-toolbar-items class="hidden-sm-and-down">
+          <v-btn flat><router-link to="/">Home</router-link></v-btn>
+          <v-btn flat><router-link to="/about">About</router-link></v-btn>
+        </v-toolbar-items>
+      </v-toolbar>
     </div>
     <router-view/>
   </div>

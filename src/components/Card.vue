@@ -95,7 +95,7 @@
       <hr>
     </div>
     <div><img id="playerPhoto" :src="photo" alt="Player Country"></div>
-    <div><img id="country" :src="image" alt="Country"><hr id = "hrCountry"></div>
+    <div><img id="country" :src="country" alt="Country"><hr id = "hrCountry"></div>
     <div><img id="club" :src="club" alt="Club"></div>
     <div id="name" > {{name}} <hr id = "hrName"> </div>
     <div id="props">
@@ -126,20 +126,19 @@
     data: function () {
       return {
         image: require('../assets/logo.png'),
-        background: require('../assets/goldCard.png'),
         cardStyle: {
-          backgroundImage: this.background,
+          backgroundImage: 'url(' + require('../assets/goldCard.png') + ')',
           backgroundHeight: '300px',
           backgroundWidth: '100px',
           backgroundPosition: 'center top',
           minHeight: '300px'
         },
-        photo: 'https://www.futbin.com/design/img/blank_player.png',
+        photo: require('../assets/ronaldo.png'),
         name: 'Ronaldo',
         average: 50,
         position:'DC',
-        country: 'https://cdn.futbin.com/content/fifa19/img/nation/38.png',
-        club: 'https://cdn.futbin.com/content/fifa19/img/clubs/45.png',
+        country: require('../assets/portugal.png'),
+        club: require('../assets/juve.png'),
         speed: 50,
         shot: 50,
         pass: 88,
@@ -149,11 +148,9 @@
 
 
       }
-      },
+    },
     computed: {
-      background (){
-        return require('../assets/logo.png')
-      }
+
     }
   }
 </script>
