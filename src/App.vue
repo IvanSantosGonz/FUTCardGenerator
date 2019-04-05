@@ -1,12 +1,12 @@
 <template>
   <div id="app">
     <div id="nav">
-      <v-toolbar>
+      <v-toolbar dark>
         <v-toolbar-title>Fifa Ultimate Team Card Generator</v-toolbar-title>
         <v-spacer></v-spacer>
         <v-toolbar-items class="hidden-sm-and-down">
-          <v-btn flat><router-link to="/">Home</router-link></v-btn>
-          <v-btn flat><router-link to="/about">About</router-link></v-btn>
+          <v-btn flat><router-link to="/">Inicio</router-link></v-btn>
+          <v-btn flat><router-link to="/generator">Generador</router-link></v-btn>
         </v-toolbar-items>
       </v-toolbar>
     </div>
@@ -28,10 +28,10 @@
 
 #nav a {
   font-weight: bold;
-  color: #2c3e50;
+  color: #aaa;
 }
 
 #nav a.router-link-exact-active {
-  color: #42b983;
+  color: #ffffff;
 }
 </style>

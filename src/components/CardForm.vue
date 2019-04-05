@@ -1,11 +1,11 @@
 <template>
-  <v-form
+  <v-form style="margin-top: 100px"
     ref="form"
     v-model="valid"
     lazy-validation
   >
     <v-layout row>
-      <v-flex xs2 offset-xs1>
+      <v-flex xs2 offset-xs3>
 
         <v-text-field
           v-model="name"
@@ -20,7 +20,7 @@
         <v-select
           v-model="average"
           :items="numbers"
-          :rules="[v => !!v || 'Item is required']"
+          :rules= "numberRules"
           label="Media"
           required
         ></v-select>
@@ -39,7 +39,7 @@
 
 
     <v-layout row>
-      <v-flex xs2 offset-xs1>
+      <v-flex xs2 offset-xs3>
         <v-select
           v-model="shot"
           :items="numbers"
@@ -71,7 +71,7 @@
     </v-layout>
 
     <v-layout row>
-      <v-flex xs2 offset-xs1>
+      <v-flex xs2 offset-xs3>
         <v-select
           v-model="defense"
           :items="numbers"
@@ -103,15 +103,17 @@
     </v-layout>
 
     <v-layout row>
-      <v-flex xs2 offset-xs3 >
+      <v-flex xs2 offset-xs5 >
         <v-btn
           :disabled="!valid"
-          color="success"
+          color="primary"
           @click="validate"
         >
-          Validate
-        </v-btn>
+          Crear
+        </v-btn >
+<!--
         <p>{{name}}, {{average}},{{speed}},{{shot}}, {{pass}}, {{dribbling}},{{defense}}, {{physic}} {{position}}</p>
+-->
       </v-flex>
     </v-layout>
 
@@ -122,19 +124,19 @@
   export default {
     data: () => ({
       valid: true,
-      name: '',
+      name: "default",
       nameRules: [
         v => !!v || 'Name is required',
         v => (v && v.length <= 11) || 'Name must be less than 10 characters'
       ],
-      average: '',
-      speed: '',
-      shot: '',
-      pass: '',
-      dribbling: '',
-      defense: '',
-      physic: '',
-      position: null,
+      average: 0,
+      speed: 0,
+      shot: 0,
+      pass: 0,
+      dribbling: 0,
+      defense: 0,
+      physic: 0,
+      position: "EI",
       positions: [
         'DC',
         'MP',
